@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自然风景展览</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -49,79 +50,12 @@
                 <button class="filter-btn" data-filter="desert">沙漠</button>
             </div>
 
-            <!-- 图片网格 -->
-            <div class="gallery-grid">
-                <!-- 山脉图片 -->
-                <div class="gallery-item mountain">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=majestic%20mountain%20landscape%20with%20snow%20capped%20peaks%20and%20blue%20sky&image_size=landscape_16_9" alt="山脉风景">
-                    <div class="gallery-item-info">
-                        <h3>雪山之巅</h3>
-                        <p>壮观的雪山景观</p>
-                    </div>
-                </div>
-                
-                <!-- 海洋图片 -->
-                <div class="gallery-item ocean">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20ocean%20landscape%20with%20clear%20blue%20water%20and%20white%20sand%20beach&image_size=landscape_16_9" alt="海洋风景">
-                    <div class="gallery-item-info">
-                        <h3>碧海蓝天</h3>
-                        <p>宁静的海滩风光</p>
-                    </div>
-                </div>
-                
-                <!-- 森林图片 -->
-                <div class="gallery-item forest">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=lush%20green%20forest%20with%20sunlight%20filtering%20through%20trees&image_size=landscape_16_9" alt="森林风景">
-                    <div class="gallery-item-info">
-                        <h3>翠绿森林</h3>
-                        <p>生机盎然的森林</p>
-                    </div>
-                </div>
-                
-                <!-- 沙漠图片 -->
-                <div class="gallery-item desert">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=vast%20desert%20landscape%20with%20sand%20dunes%20and%20sunset&image_size=landscape_16_9" alt="沙漠风景">
-                    <div class="gallery-item-info">
-                        <h3>沙漠日落</h3>
-                        <p>金色的沙漠景观</p>
-                    </div>
-                </div>
-                
-                <!-- 山脉图片 -->
-                <div class="gallery-item mountain">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=misty%20mountain%20valley%20with%20waterfall&image_size=landscape_16_9" alt="山脉风景">
-                    <div class="gallery-item-info">
-                        <h3>山谷瀑布</h3>
-                        <p>神秘的山谷景观</p>
-                    </div>
-                </div>
-                
-                <!-- 海洋图片 -->
-                <div class="gallery-item ocean">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=coastal%20cliffs%20with%20waves%20crashing%20against%20rocks&image_size=landscape_16_9" alt="海洋风景">
-                    <div class="gallery-item-info">
-                        <h3>海岸悬崖</h3>
-                        <p>壮观的海岸景观</p>
-                    </div>
-                </div>
-                
-                <!-- 森林图片 -->
-                <div class="gallery-item forest">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=autumn%20forest%20with%20colorful%20leaves&image_size=landscape_16_9" alt="森林风景">
-                    <div class="gallery-item-info">
-                        <h3>秋日森林</h3>
-                        <p>绚丽的秋日景观</p>
-                    </div>
-                </div>
-                
-                <!-- 沙漠图片 -->
-                <div class="gallery-item desert">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=desert%20oasis%20with%20palm%20trees%20and%20water&image_size=landscape_16_9" alt="沙漠风景">
-                    <div class="gallery-item-info">
-                        <h3>沙漠绿洲</h3>
-                        <p>沙漠中的生命之源</p>
-                    </div>
-                </div>
+            <!-- 加载状态 -->
+            <div id="loading" class="loading">正在加载图片...</div>
+            
+            <!-- 图片网格 - 动态从Supabase加载 -->
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- 图片将通过JavaScript动态加载 -->
             </div>
         </div>
     </section>
@@ -162,6 +96,7 @@
         <div id="caption"></div>
     </div>
 
+    <script src="supabase.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
