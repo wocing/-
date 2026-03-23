@@ -1,0 +1,1021 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏样式 */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-right: 30px;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle .dark-icon {
+    display: none;
+}
+
+/* 深色模式样式 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: rgba(18, 18, 18, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .logo {
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-links a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #3498db;
+}
+
+body.dark-mode .gallery {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .gallery h2,
+body.dark-mode .about h2,
+body.dark-mode .contact h2 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .filter-btn {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .filter-btn:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+body.dark-mode .filter-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+body.dark-mode .gallery-item {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .gallery-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .about {
+    background-color: #252525;
+}
+
+body.dark-mode .about p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .contact {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .contact p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: #888;
+}
+
+body.dark-mode footer {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .theme-toggle {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .theme-toggle .light-icon {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .dark-icon {
+    display: block;
+}
+
+/* 首页横幅样式 */
+.hero {
+    height: 100vh;
+    background-image: url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=panoramic%20natural%20landscape%20with%20mountains%20and%20lake&image_size=landscape_16_9');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* 图片画廊样式 */
+.gallery {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #2c3e50;
+}
+
+/* 分类筛选按钮样式 */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    margin: 0 10px 10px 0;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+/* 图片网格样式 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-info {
+    transform: translateY(0);
+}
+
+.gallery-item-info h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.gallery-item-info p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* 关于部分样式 */
+.about {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #2c3e50;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* 联系部分样式 */
+.contact {
+    padding: 100px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #2c3e50;
+}
+
+.contact p {
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #666;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .gallery h2,
+    .about h2,
+    .contact h2 {
+        font-size: 24px;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        margin: 5px 0;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .gallery,
+    .about,
+    .contact {
+        padding: 60px 0;
+    }
+}
+
+/* 加载状态样式 */
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+}
+
+body.dark-mode .loading {
+    color: #b0b0b0;
+}
+
+/* 无图片提示样式 */
+.no-images {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+body.dark-mode .no-images {
+    color: #b0b0b0;
+}
+
+/* 错误信息样式 */
+.error-message {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+    color: #e74c3c;
+    grid-column: 1 / -1;
+}
+
+body.dark-mode .error-message {
+    color: #ff6b6b;
+}
+
+/* AI推荐部分样式 */
+.ai-recommendations {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+}
+
+body.dark-mode .ai-recommendations {
+    background-color: #252525;
+}
+
+.ai-recommendations h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #2c3e50;
+}
+
+body.dark-mode .ai-recommendations h2 {
+    color: #e0e0e0;
+}
+
+.ai-recommendations-container {
+    margin-top: 30px;
+}
+
+.ai-recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.ai-recommendation-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: white;
+}
+
+body.dark-mode .ai-recommendation-item {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ai-recommendation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .ai-recommendation-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.recommendation-rank {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #3498db;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.ai-recommendation-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recommendation-info {
+    padding: 20px;
+}
+
+.recommendation-info h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+body.dark-mode .recommendation-info h4 {
+    color: #e0e0e0;
+}
+
+.recommendation-reason {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+body.dark-mode .recommendation-reason {
+    color: #b0b0b0;
+}
+
+.no-recommendations {
+    text-align: center;
+    padding: 60px;
+    font-size: 16px;
+    color: #666;
+}
+
+body.dark-mode .no-recommendations {
+    color: #b0b0b0;
+}
+
+/* AI聊天助手样式 */
+.ai-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 380px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+body.dark-mode .ai-chat-container {
+    background-color: #2d2d2d;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.ai-chat-header {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ai-chat-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.ai-chat-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.ai-chat-body {
+    display: none;
+    flex-direction: column;
+    height: 450px;
+}
+
+.ai-chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+body.dark-mode .ai-chat-messages {
+    background-color: #1a1a1a;
+}
+
+.ai-welcome-message {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .ai-welcome-message {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.ai-welcome-message p {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+body.dark-mode .ai-welcome-message p {
+    color: #e0e0e0;
+}
+
+.ai-welcome-message ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #666;
+}
+
+body.dark-mode .ai-welcome-message ul {
+    color: #b0b0b0;
+}
+
+.ai-welcome-message li {
+    margin: 5px 0;
+}
+
+.ai-chat-message {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: #e0e0e0;
+    flex-shrink: 0;
+}
+
+body.dark-mode .message-avatar {
+    background-color: #404040;
+}
+
+.user-message .message-avatar {
+    background-color: #3498db;
+}
+
+.ai-message .message-avatar {
+    background-color: #2ecc71;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 0 10px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.user-message .message-content {
+    background-color: #3498db;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.ai-message .message-content {
+    background-color: white;
+    color: #333;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .ai-message .message-content {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.ai-typing-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.typing-dots {
+    display: flex;
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 15px;
+    margin-left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .typing-dots {
+    background-color: #2d2d2d;
+}
+
+.typing-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #95a5a6;
+    margin: 0 2px;
+    animation: typing 1.4s infinite;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    30% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+.ai-chat-input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    background-color: white;
+}
+
+body.dark-mode .ai-chat-input-area {
+    border-top-color: #404040;
+    background-color: #2d2d2d;
+}
+
+#ai-chat-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+body.dark-mode #ai-chat-input {
+    background-color: #1a1a1a;
+    border-color: #404040;
+    color: #e0e0e0;
+}
+
+#ai-chat-input:focus {
+    border-color: #3498db;
+}
+
+.ai-chat-send {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.ai-chat-send:hover {
+    transform: scale(1.05);
+}
+
+.ai-image-context {
+    background-color: #e8f4f8;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid #3498db;
+}
+
+body.dark-mode .ai-image-context {
+    background-color: #1a3a4a;
+    border-left-color: #3498db;
+}
+
+.ai-image-context p {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+body.dark-mode .ai-image-context p {
+    color: #e0e0e0;
+}
+
+/* 询问AI按钮样式 */
+.ask-ai-btn {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.ask-ai-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ai-recommendations {
+        padding: 60px 0;
+    }
+    
+    .ai-recommendations h2 {
+        font-size: 24px;
+    }
+    
+    .ai-recommendation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ai-chat-container {
+        width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+        bottom: 10px;
+    }
+    
+    .ai-chat-body {
+        height: 400px;
+    }
+    
+    .message-content {
+        max-width: 80%;
+    }
+}
+
+/* 滚动条样式 */
+.ai-chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ai-chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+body.dark-mode .ai-chat-messages::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.ai-chat-messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.ai-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
